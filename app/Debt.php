@@ -12,7 +12,7 @@ class Debt extends Model
 {
 
     protected $fillable = [
-        'debtor_id', 'victim_id',
+        'debt'
     ];
 
     public static function create($attributes)
@@ -22,4 +22,10 @@ class Debt extends Model
 
         return $model;
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 }

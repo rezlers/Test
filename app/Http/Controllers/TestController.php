@@ -47,5 +47,7 @@ class TestController extends Controller
 //
 //        return $debt->toJson(JSON_PRETTY_PRINT);
 
+        $users = Debt::query()->find(2)->users()->get();
+        var_dump($users);
     }
 }
